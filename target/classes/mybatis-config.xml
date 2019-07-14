@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+    <typeAliases>
+        <!--<package name="tk.mybatis.simple.model"></package>-->
+        <package name="test.model"></package>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC">
+                <property name="" value=""/>
+            </transactionManager>
+            <dataSource type="UNPOOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="mysql"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!-- 引入Mapper.xml -->
+        <!--    用package的前提是对包下的接口，循环按接口限定名tk.mybatis.simple.mapper.UserMapper
+                转换成tk/mybatis/simple/mapper/UserMapper.xml 然后以.xml后缀搜索XML资源 ，找到就解析。-->
+        <!--    <mapper resource="tk/mybatis/simple/mapper/UserMapper.xml"/>
+                <mapper resource="tk/mybatis/simple/mapper/DynamicMapperTest.xml"/>-->
+
+       <!-- <mapper resource="test/xml/SysUserMapper.xml"/>-->
+        <package name="tk.mybatis.simple.mapper"/>
+    </mappers>
+</configuration>

@@ -30,5 +30,6 @@ public interface UserMapper {
     int deleteById(Long id);
 
     List<SysRole> selectRolesByUserIdAndRoleEnabled(@Param("userId") Long userId, @Param("enabled") Integer enabled);
+
     List<SysRole> selectRolesByUserIdAndRoleEnabledUseJavaBean(@Param("user") SysUser user, @Param("role") SysRole role);
 }
